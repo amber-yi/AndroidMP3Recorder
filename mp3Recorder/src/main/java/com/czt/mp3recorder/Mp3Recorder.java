@@ -171,7 +171,7 @@ public class Mp3Recorder {
     }
 
     public void stop(int action){
-        if (audioRecorder != null && state == State.RECORDING){
+        if (audioRecorder != null && (state == State.RECORDING||state==State.PAUSED)){
             audioRecorder.stopRecord();
             am.abandonAudioFocus(listener);
 
